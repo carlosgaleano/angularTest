@@ -1,0 +1,50 @@
+<div class="login-page">
+  <div class="login-form-container">
+    <div class="logo-area">
+      <div class="logo-icon">~</div>
+    </div>
+
+    <h2>Acceso al Sistema de tracking</h2>
+    <p class="trial-link">
+
+      <a href="#" >Ingrese los datos para ingresar</a>
+    </p>
+
+    <form (ngSubmit)="onSubmit()">
+      <label for="email">Email address</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+
+      <div class="options-row">
+        <label class="remember-me">
+          <input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe">
+          Remember me
+        </label>
+        <a href="#" (click)="forgotPassword()" class="forgot-password">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="sign-in-button">Sign in</button>
+    </form>
+
+    <div class="separator">
+      <span>Or continue with</span>
+    </div>
+
+    <div class="social-login">
+
+      <button (click)="loginWithGoogle()" class="social-button google">
+        <div id="google-icon-png"></div>
+      Google
+      </button>
+      <button (click)="loginWithGitHub()" class="social-button github">
+        <div id="github-icon-png"></div>
+        GitHub
+      </button>
+    </div>
+  </div>
+
+  <div class="login-image-side">
+    </div>
+</div>

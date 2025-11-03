@@ -1,0 +1,260 @@
+/**
+ * @Author: Carlos Galeano
+ * @Date:   2025-11-03 14:37:08
+ * @Last Modified by:   Carlos Galeano
+ * @Last Modified time: 2025-11-03 16:34:34
+ */
+/* Contenedor principal para la página de login (Flexbox) */
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #c9d1d9; /* Color claro para el texto */
+  background-color: #0d1117; /* Fondo oscuro (similar a GitHub dark) */
+}
+
+/* Lado del formulario (ocupa una porción del ancho) */
+.login-form-container {
+  flex: 0 0 400px; /* Ancho fijo para el formulario */
+  padding: 40px 60px;
+  background-color: #161b22; /* Fondo del contenedor del formulario, un poco más claro que el fondo de la página */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+}
+
+/* Lado de la imagen (ocupa el resto del ancho) */
+.login-image-side {
+  flex-grow: 1;
+  background-image: url('../../../assets/workspace.jpg'); /* Reemplaza con tu imagen */
+  background-size: cover;
+  background-position: center;
+}
+
+/* --- Estilos del Formulario --- */
+
+.logo-icon {
+  font-size: 24px;
+  color: #58a6ff; /* Color de acento */
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #f0f6fc; /* Títulos más blancos */
+}
+
+.trial-link {
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.trial-link a {
+  color: #58a6ff; /* Enlace de acento */
+  text-decoration: none;
+}
+
+/* Estilos para etiquetas e inputs */
+label {
+  display: block;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #0d1117; /* Fondo de input muy oscuro */
+  border: 1px solid #30363d; /* Borde sutil */
+  border-radius: 6px;
+  color: #f0f6fc;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #58a6ff;
+  outline: none;
+}
+
+/* Fila de "Recordarme" y "Olvidé Contraseña" */
+.options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.forgot-password {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+/* Botón de Sign In */
+.sign-in-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #6e40c6; /* Púrpura similar a la imagen */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.sign-in-button:hover {
+  background-color: #8a63d2;
+}
+
+/* Separador "Or continue with" */
+.separator {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 12px;
+  color: #6a737d;
+  position: relative;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #30363d;
+}
+
+.separator::before {
+  left: 0;
+}
+
+.separator::after {
+  right: 0;
+}
+
+/* Botones de Login Social */
+.social-login {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.social-button {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  border: 1px solid #30363d;
+  background-color: #161b22;
+  color: #f0f6fc;
+  transition: background-color 0.2s;
+}
+
+.social-button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.social-button:hover {
+  background-color: #30363d;
+}
+
+.social-button {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* ... resto de estilos del botón ... */
+}
+
+/* Estilo para el ícono de Google (PNG) */
+#google-icon-png {
+  /* Propiedades de tu código original, adaptadas para un tamaño de ícono de botón */
+
+  /* Define el tamaño del div para que la imagen se vea */
+  width: 60px;
+  height: 60px;
+
+  /* Ubicación de tu imagen PNG */
+  background-image: url('../../../assets/logo_google.png');
+  background-size: contain; /* Asegura que la imagen se ajuste dentro del div */
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* Aplica el filtro de inversión */
+  filter: invert(1);
+
+  margin-right: 8px; /* Separación del texto */
+
+  /* Puedes ajustar el tamaño original si necesitas que sea más grande */
+  /* width: 46px;
+     height: 44px; */
+}
+
+#github-icon-png {
+  /* Propiedades de tu código original, adaptadas para un tamaño de ícono de botón */
+
+  /* Define el tamaño del div para que la imagen se vea */
+  width: 60px;
+  height: 60px;
+
+  /* Ubicación de tu imagen PNG */
+  background-image: url('../../../assets/logo_github.png');
+  background-size: contain; /* Asegura que la imagen se ajuste dentro del div */
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* Aplica el filtro de inversión */
+  filter: invert(1);
+
+  margin-right: 8px; /* Separación del texto */
+
+  /* Puedes ajustar el tamaño original si necesitas que sea más grande */
+  /* width: 46px;
+     height: 44px; */
+}
+
+/* Media Query para dispositivos pequeños */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-form-container {
+    flex: 1;
+    width: 100%;
+    padding: 30px 40px;
+  }
+
+  .login-image-side {
+    display: none; /* Ocultar la imagen en móviles */
+  }
+
+  .social-login {
+    flex-direction: column; /* Apilar botones sociales en móviles */
+  }
+}

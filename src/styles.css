@@ -1,1 +1,12 @@
+/**
+ * @Author: Carlos Galeano
+ * @Date:   2025-10-30 17:43:26
+ * @Last Modified by:   Carlos Galeano
+ * @Last Modified time: 2025-11-03 13:08:44
+ */
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1d4ed8; /* azul base */
+}
