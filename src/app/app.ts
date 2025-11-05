@@ -2,12 +2,14 @@
  * @Author: Carlos Galeano
  * @Date:   2025-10-30 17:43:26
  * @Last Modified by:   Carlos Galeano
- * @Last Modified time: 2025-11-03 14:42:06
+ * @Last Modified time: 2025-11-05 16:26:45
  */
 // app/app.ts
 
 import { Component } from '@angular/core';
-import { LoginComponent } from './components/login/login.component'; // Importa desde su nueva ubicación
+//import { LoginComponent } from './components/login/login.component'; // Importa desde su nueva ubicación
+import {LoginComponent} from './features/auth/components/login/login.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root', // El selector raíz

@@ -2,7 +2,7 @@
  * @Author: Carlos Galeano
  * @Date:   2025-11-03 14:37:08
  * @Last Modified by:   Carlos Galeano
- * @Last Modified time: 2025-11-04 10:21:21
+ * @Last Modified time: 2025-11-04 11:57:51
  */
 /* Contenedor principal para la página de login (Flexbox) */
 .login-page {
@@ -26,7 +26,7 @@
 /* Lado de la imagen (ocupa el resto del ancho) */
 .login-image-side {
   flex-grow: 1;
-  background-image: url('../../../assets/fondo_3.1.jpeg'); /* Reemplaza con tu imagen */
+  background-image: url('../../../../../assets/fondo_3.1.jpeg'); /* Reemplaza con tu imagen */
   background-size: cover;
   background-position: center;
 }
@@ -200,7 +200,7 @@ input[type="password"]:focus {
   height: 60px;
 
   /* Ubicación de tu imagen PNG */
-  background-image: url('../../../assets/logo_google.png');
+  background-image: url('../../../../../assets/logo_google.png');
   background-size: contain; /* Asegura que la imagen se ajuste dentro del div */
   background-repeat: no-repeat;
   background-position: center;
@@ -223,7 +223,7 @@ input[type="password"]:focus {
   height: 60px;
 
   /* Ubicación de tu imagen PNG */
-  background-image: url('../../../assets/logo_github.png');
+  background-image: url('../../../../../assets/logo_github.png');
   background-size: contain; /* Asegura que la imagen se ajuste dentro del div */
   background-repeat: no-repeat;
   background-position: center;

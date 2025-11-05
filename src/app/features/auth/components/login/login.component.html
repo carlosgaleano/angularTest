@@ -6,37 +6,44 @@
 
     <h2>Acceso al Sistema de tracking</h2>
     <p class="trial-link">
-
       <a href="#" >Ingrese los datos para ingresar</a>
     </p>
 
-    <form (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" >
       <label for="email">Email</label>
-      <input type="email" id="email" [(ngModel)]="email" name="email" required>
-
-      <label for="password">Password</label>
-      <input type="password" id="password" [(ngModel)]="password" name="password" required>
-
-      <div class="options-row">
+      <input type="email" id="email"name="email" required formControlName="email"> <label for="password">Password</label>
+      <input type="password" id="password"  name="password" required formControlName="password"> <div class="options-row">
         <label class="remember-me">
-          <input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe">
+          <input type="checkbox"  name="rememberMe">
           Remember me
         </label>
         <a href="#" (click)="forgotPassword()" class="forgot-password">Forgot password?</a>
       </div>
 
-      <button type="submit" class="sign-in-button">Sign in</button>
-    </form>
+     <!--  <button type="submit" (click)="onSubmit()" [disabled]="loginForm.invalid || (loading$ | async)">
+        <span *ngIf="!(loading$ | async)">Iniciar Sesión</span>
+        <span *ngIf="loading$ | async">Cargando...</span>
+      </button> -->
+
+
+      <button
+    type="button"
+    (click)="onSubmit()"
+    class="sign-in-button"
+    [disabled]="loginForm.invalid || (loading$ | async)">
+    Ingresar
+</button>
+
+      </form>
 
     <div class="separator">
       <span>Or continue with</span>
     </div>
 
     <div class="social-login">
-
       <button (click)="loginWithGoogle()" class="social-button google">
         <div id="google-icon-png"></div>
-      Google
+        Google
       </button>
       <button (click)="loginWithGitHub()" class="social-button github">
         <div id="github-icon-png"></div>
@@ -46,5 +53,5 @@
   </div>
 
   <div class="login-image-side">
-    </div>
+  </div>
 </div>
