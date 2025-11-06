@@ -2,7 +2,7 @@
  * @Author: Carlos Galeano
  * @Date:   2025-10-30 17:43:26
  * @Last Modified by:   Carlos Galeano
- * @Last Modified time: 2025-11-05 16:26:45
+ * @Last Modified time: 2025-11-06 11:48:29
  */
 // app/app.ts
 

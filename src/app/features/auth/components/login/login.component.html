@@ -9,7 +9,7 @@
       <a href="#" >Ingrese los datos para ingresar</a>
     </p>
 
-    <form [formGroup]="loginForm" >
+    <form [formGroup]="loginForm"  >
       <label for="email">Email</label>
       <input type="email" id="email"name="email" required formControlName="email"> <label for="password">Password</label>
       <input type="password" id="password"  name="password" required formControlName="password"> <div class="options-row">
@@ -25,14 +25,13 @@
         <span *ngIf="loading$ | async">Cargando...</span>
       </button> -->
 
-
-      <button
-    type="button"
-    (click)="onSubmit()"
-    class="sign-in-button"
-    [disabled]="loginForm.invalid || (loading$ | async)">
-    Ingresar
-</button>
+   <button
+        type="button"
+        (click)="onSubmit()"
+         [disabled]="loginForm.invalid || (loading$ | async)"
+        class="sign-in-button">
+        Ingresar
+    </button>
 
       </form>
 
@@ -41,14 +40,14 @@
     </div>
 
     <div class="social-login">
-      <button (click)="loginWithGoogle()" class="social-button google">
+     <!--  <button (click)="loginWithGoogle()" class="social-button google">
         <div id="google-icon-png"></div>
         Google
       </button>
       <button (click)="loginWithGitHub()" class="social-button github">
         <div id="github-icon-png"></div>
         GitHub
-      </button>
+      </button> -->
     </div>
   </div>
 

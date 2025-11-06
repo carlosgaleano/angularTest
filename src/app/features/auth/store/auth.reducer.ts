@@ -2,61 +2,70 @@
  * @Author: Carlos Galeano
  * @Date:   2025-11-04 11:12:59
  * @Last Modified by:   Carlos Galeano
- * @Last Modified time: 2025-11-05 15:42:22
+ * @Last Modified time: 2025-11-06 15:46:08
  */
-import { createReducer, on } from '@ngrx/store';
-import * as AuthActions from './auth.actions';
+// src/app/store/auth/auth.reducer.ts
 
-// Definición del estado (se recomienda en un archivo auth.state.ts, pero lo incluimos aquí para simplificar)
+import { createReducer, on } from '@ngrx/store';
+import { AuthActions } from './auth.actions';
+
+// Interfaz del estado de la característica Auth
 export interface AuthState {
-  user: any | null;
   token: string | null;
+  user: any | null;
   isAuthenticated: boolean;
   loading: boolean;
   error: any | null;
 }
 
-// Inicialización del estado
+// Estado inicial: Intenta cargar el token desde el localStorage para persistencia
 export const initialAuthState: AuthState = {
-  // 🚩 FIX: Initialize with null/false to be SSR-safe.
-  token: null,
-  isAuthenticated: false,
+  token: null, // Lo inicializamos en null
   user: null,
+  isAuthenticated: false,
   loading: false,
   error: null,
 };
 
-// Reducer que define cómo cambia el estado en respuesta a las acciones
+// Reducer que define las transiciones de estado
 export const authReducer = createReducer(
   initialAuthState,
 
-  // Login Attempt
+  // Cuando se dispara login: iniciar carga
   on(AuthActions.login, (state) => ({
     ...state,
     loading: true,
-    error: null
+    error: null,
   })),
 
-  // Login Success
-  on(AuthActions.loginSuccess, (state, { user, token }) => ({
+  // Cuando login es exitoso: guardar datos y marcar como autenticado
+  on(AuthActions.loginSuccess, (state, { token, user }) => ({
     ...state,
-    user,
     token,
+    user,
     isAuthenticated: true,
     loading: false,
     error: null,
   })),
 
-  // Login Failure
+  // Cuando login falla: limpiar estado y guardar error
   on(AuthActions.loginFailure, (state, { error }) => ({
     ...state,
-    user: null,
     token: null,
+    user: null,
     isAuthenticated: false,
     loading: false,
     error,
   })),
 
-  // Logout Success (resetea el estado a su valor inicial)
-  on(AuthActions.logoutSuccess, () => initialAuthState)
+  // Cuando se dispara logout: limpiar todo el estado
+  on(AuthActions.logout, () => ({
+    ...initialAuthState, // Puedes reiniciar al estado inicial, o un estado limpio
+    token: null,
+    user: null,
+    isAuthenticated: false,
+  }))
 );
+
+// Exporta el nombre de la característica (usado para registrar el feature en el App Module)
+export const authFeatureKey = 'auth';
